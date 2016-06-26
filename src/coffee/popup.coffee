@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () ->
     } , (tabs) ->
         chrome.tabs.sendMessage(
             tabs[0].id,
-            { type: "getCount" } ,
+            { type: "get_count" } ,
             (count) ->
                 if count is undefined
                     count = 0

@@ -17,14 +17,16 @@
     },
     "content_scripts": [{
         "matches": [
-            "*://www.youtube.com/*"
+            "*://www.youtube.com/*",
+            "*://*.4chan.org/*"
         ],
         "js": ["bundle.js"]
     }],
     "permissions": [
         "activeTab",
+        "storage",
         "tabs",
-        "https://ajax.googleapis.com/"
+        "http://*/*"
     ],
     "web_accessible_resources": [
         "classifier.json"

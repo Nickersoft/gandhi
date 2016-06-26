@@ -1,6 +1,6 @@
-CommentFilter = require('../CommentFilter')
+AjaxCommentFilter = require('../AjaxCommentFilter')
 
-class YouTubeFilter extends CommentFilter
+class YouTubeFilter extends AjaxCommentFilter
     commentParentSelector: '#watch-discussion'
     commentThreadSelector: '.comment-thread-renderer'
     commentSelector: '.comment-renderer'
