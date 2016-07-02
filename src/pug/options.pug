@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title Gandhi - Options
+        link(rel="stylesheet" 
+             type="text/css" 
+             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css")
+        link(rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400")
+        link(rel="stylesheet" type="text/css" href="options.css")
+        link(rel="icon" type="image/png" href="resources/icon-48.png")
+    body
+        div.content
+            h1 Click a site to enable/disable its comment blocking
+            ul
+                li.youtube(title="YouTube" data-url="youtube.com")
+                    span.fa.fa-youtube
+                li.reddit(title="Reddit" data-url="reddit.com")
+                    span.fa.fa-reddit-alien
+                li.disqus(title="Disqus" data-url="disqus.com")
+                    span D
+                li.fchan(title="4chan" data-url="4chan.org")
+                    span 4c
+            img(id="gandhi-icon" class="icon" src="resources/icon-128.png")
+        script(type="text/javascript" src="options.js")

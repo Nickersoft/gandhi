@@ -52,11 +52,30 @@ chrome.runtime.onMessage.addListener(
             else
                 sendResponse(classifier_json)
             return true
-)
+        if message.type is "get_sites"
+            chrome.storage.sync.get("sites_enabled", (data) ->
+                site_list = {}
+                if data.sites_enabled?
+                    site_list = data.sites_enabled
+                sendResponse(site_list)
+            )
+            return true
+        if message.type is "set_enabled"
+            if message.url? and message.enabled?
+                chrome.storage.sync.get("sites_enabled", (data) ->
+                    site_list = {}
+                    if data.sites_enabled?
+                        site_list = data.sites_enabled
+                    site_list[message.url] = message.enabled
+                    console.log(site_list)
+                    chrome.storage.sync.set({
+                        "sites_enabled": site_list
+                    } )
+                    sendResponse()
+                )
+            return true
 
-chrome.browserAction.setBadgeBackgroundColor({
-    color: "#00800B"
-} )
+)
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) ->
     if changeInfo.url isnt undefined
@@ -67,3 +86,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) ->
                 requestCount(tabId)
         )
 )
+
+chrome.browserAction.setBadgeBackgroundColor({
+    color: "#00800B"
+} )

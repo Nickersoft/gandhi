@@ -1,4 +1,5 @@
 $ = require('jquery')
+natural = require('natural')
 
 StaticCommentFilter = require('./StaticCommentFilter')
 

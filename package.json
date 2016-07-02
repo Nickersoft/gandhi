@@ -19,7 +19,7 @@
     "build_and_train": "npm run build_debug && node ./bin/.tmp/classifier/train.js && npm run clean_temp",
     "copy_manifest": "npm run shx -- cp manifest.json ./bin",
     "copy_resources": "npm run shx -- cp -r ./resources ./bin",
-    "copy_helpers": "npm run shx -- cp ./bin/.tmp/{background.js,popup.js} ./bin",
+    "copy_helpers": "npm run shx -- cp ./bin/.tmp/{background.js,popup.js,options.js} ./bin",
     "copy_files": "npm run copy_manifest && npm run copy_resources && npm run copy_helpers",
     "clean": "npm run shx -- rm -rf ./bin",
     "clean_temp": "npm run shx -- rm -rf ./bin/.tmp",
